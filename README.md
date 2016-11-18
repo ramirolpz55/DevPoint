@@ -18,7 +18,7 @@
 ## Dashboard
 
 	3. Sidenav and body all have function to access each area of the dashboard.
-		 About Me
+		 _About Me_
 			 - User will be able to update their personal information, Github, LinkedIN, email, Facebook, and Stackoverflow account.  They can also include a bio of their achievements or goals. 
 			 - A picture can be uploaded as a profile picture thus giving face to the user for recognization.
 		Portfolio 
