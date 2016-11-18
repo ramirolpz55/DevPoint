@@ -7,7 +7,7 @@
 
 ## Live Website 
 
-	https://devpointtech.herokuapp.com/
+	DEVPOINT[https://devpointtech.herokuapp.com/]
 
 ## Register
 
