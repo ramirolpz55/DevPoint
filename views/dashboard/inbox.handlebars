@@ -1,0 +1,50 @@
+<div class="table-responsive">
+    <table id="inboxArea" class="table table-bordered table-hover" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Message</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+{{#section 'script'}}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#active4').addClass('active');
+    // event.preventDefault();
+});
+$(function() {
+
+var settings = {
+  "url": "/api/messages/1",
+  "method": "GET"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+  $('#inboxArea').DataTable({
+        "ajax": {
+            url: "/api/messages/{{user.id}}",
+            dataSrc: ''
+        },
+
+        "columns": [{
+            "data": "email"
+        }, {
+            "data": "phone"
+        }, {
+            "data": "message"
+        }, {
+            "data": "createdAt"
+        }]
+    });
+});
+</script>
+{{/section}}
+<!-- /.container-fluid -->

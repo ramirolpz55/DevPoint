@@ -1,0 +1,30 @@
+{
+  "name": "profile-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.14.2",
+    "client-sessions": "^0.7.0",
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12",
+    "express": "^4.13.3",
+    "express-fileupload": "0.0.5",
+    "express-handlebars": "^2.0.1",
+    "method-override": "^2.3.5",
+    "morgan": "^1.7.0",
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "sequelize": "^3.24.3",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  }
+}

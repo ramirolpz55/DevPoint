@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/signup.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Metal+Mania" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-default" style="background-color: slategrey; color: white;" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="color: white;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="/">Dev Point</a> -->
+                <!--LOGO THAT GOES INTO THE NAVBAR-->
+                <div class="logo">
+                    <a href="/">
+                        <img src="img/logo.gif" style="width:125px;">
+                    </a>
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white; font-family: avenir;">Home <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="font-family:avenir; color:white;">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row centered-form">
+            <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 lcol-lg-offset-4">
+                <div class="panel panel-default"> -->
+            <div class="panel-heading-title">
+                <h3 class="panel-heading-title-2" style="color:blue; font-size:25px;"> Welcome! Sign up for<span id="pic"><img src="img/logo.gif" class="logo" style="width:200px;"></span></h3>
+            </div>
+            <div class="panel-body">
+                <form action="/register" method="post" role="form" name="registration-form">
+                    <!-- <div class="row"> -->
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <label for="Username">Username </label>
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Select a User Name" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <label for="firstName">First Name </label>
+                        <div class="form-group">
+                            <input type="text" name="firstName" id="firstName" class="form-control input-sm" placeholder="First Name" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <label for="lastName">Last Name </label>
+                        <div class="form-group">
+                            <input type="text" name="lastName" id="lastName" class="form-control input-sm" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <!--  </div> -->
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <label for="email">Email </label>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <label for="password">Password </label>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <label for="password_confirmation">Confirm your Password </label>
+                        <div class="form-group">
+                            <input type="password" name="newPasswordConfirm" id="newPasswordConfirm" class="form-control input-sm" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2" id="message-alert" style="text-align: center">
+                        <span id="message"><br></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-5">
+                        <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg">
+                    </div>
+                </form>
+                <!--  </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- <div class="panel panel-default"> -->
+    <div class="panel-footer">
+        Copyright © 2016. Dev Point, Inc. All rights reserved. - Powered By Dev Point.
+    </div>
+    <!-- </div> -->
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+        $('form[name=registration-form]').submit(function() {
+            $.post($(this).attr('action'), $(this).serialize(), function(res) {
+                console.log(res.response);
+                if (res.response) {
+                    window.location.href = "/login";
+                }
+                $("#message").text(res.message);
+                // location.reload();
+            });
+            // alert("User Name already Taken");
+            return false; // prevent default action
+        });
+    });
+    </script>
+</body>
+
+</html>

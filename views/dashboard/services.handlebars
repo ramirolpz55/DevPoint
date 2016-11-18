@@ -1,0 +1,78 @@
+<a class="btn btn-primary" data-toggle="modal" href='#modal-add-service'>Add Service</a>
+<br>
+<br>
+<div class="table-responsive">
+    <table id="example" class="table table-bordered table-hover" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<!-- Modal -->
+<div id="modal-add-service" class="modal modal-fullscreen fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Project</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" name="addservice" action="/api/service" method="POST">
+                    <div class="form-group">
+                        <label for="disabledSelect">Name</label>
+                        <input class="form-control" type="text" name="title" required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disabledSelect">Descriptiion</label>
+                        <input class="form-control" type="text" name="description" required="true">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Project</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{#section 'script'}}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#active5').addClass('active');
+    // event.preventDefault();
+});
+$(function() {
+    $('form[name=addservice]').submit(function() {
+        $("#modal-add-service").modal('toggle');
+        $.post($(this).attr('action'), $(this).serialize(), function(res) {
+            console.log(res);
+            $('form[name=addservice]')[0].reset();
+            table.ajax.reload(null, false);
+        });
+
+        return false; // prevent default action
+    });
+
+
+    var table = $('#example').DataTable({
+        "ajax": {
+            url: "/api/services/{{user.id}}",
+            dataSrc: ''
+        },
+
+        "columns": [{
+            "data": "title"
+        },{
+            "data": "description"
+        }]
+    });
+});
+</script>
+{{/section}}
+<!-- /.container-fluid -->

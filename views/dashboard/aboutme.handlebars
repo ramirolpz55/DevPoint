@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+        <form action="/api/users/uploadimage" method='POST'  enctype="multipart/form-data">
+
+            <label class="btn btn-default">
+                 Upload Pic<input type="file" style="display: none;" name="pic" accept="image/*">
+            </label>
+            <br>
+
+            {{!-- <input type="file" name="pic" accept="image/*"> --}}
+
+            <br>
+                <input type="submit" class="btn btn-primary">
+            <br>
+            <br>
+        </form>
+    </div>
+</div>
+
+<form role="form" name="update-user" action="/api/users/{{user.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+    <div class="form-group col-sm-6">
+        <label for="disabledSelect">First Name</label>
+        <input class="form-control" type="text" name="firstName" required="true" value="{{user.firstName}}">
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="disabledSelect">Last Name</label>
+        <input class="form-control" type="text" name="lastName" required="true" value="{{user.lastName}}">
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="disabledSelect">Email</label>
+        <input class="form-control" type="text" name="email" value="{{user.email}}">
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="disabledSelect">Headline</label>
+        <input class="form-control" type="text" name="headline" value="{{user.headline}}">
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="disabledSelect">GitHub Profile</label>
+        <input class="form-control" type="text" name="linkGitHub" value="{{user.linkGitHub}}">
+    </div>
+     <div class="form-group col-sm-6">
+        <label for="disabledSelect">Facebook</label>
+        <input class="form-control" type="text" name="linkFacebook" value="{{user.linkFacebook}}">
+    </div>
+     <div class="form-group col-sm-6">
+        <label for="disabledSelect">Twitter</label>
+        <input class="form-control" type="text" name="linkTwitter" value="{{user.linkTwitter}}">
+    </div>
+     <div class="form-group col-sm-6">
+        <label for="disabledSelect">Stack Overflow</label>
+        <input class="form-control" type="text" name="linkStack" value="{{user.linkStack}}">
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="disabledSelect">LinkedIn</label>
+        <input class="form-control" type="text" name="linkLinkedIn" value="{{user.linkLinkedIn}}">
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="disabledSelect">Description</label>
+        <textarea name="description" id="inputDesc" class="form-control" rows="3" required="required">{{user.description}}</textarea>
+    </div>
+    <div class="form-group col-sm-12">
+        <button type="submit" class="btn btn-primary pull-right">Update</button>
+    </div>
+</form>
+{{#section 'script'}}
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#active2').addClass('active');
+    // event.preventDefault();
+});
+$(function() {
+    $('form[name=update-user]').submit(function() {
+        $.post($(this).attr('action'), $(this).serialize(), function(res) {
+            console.log(res);
+            location.reload();
+        });
+        return false; // prevent default action
+    });
+});
+</script>
+{{/section}}
+<!-- /.container-fluid -->

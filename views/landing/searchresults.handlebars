@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="assets/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="row" id='testing'>
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><h4>DP</h4></a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="#">Registration</a>
+                        </li>
+                        <li>
+                            <a href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+    </nav>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-4 col-md-4 col-lg-8 col-lg-offset-2">
+            <table class="table table-striped table-hover " id='example' >
+                <thead>
+                    <tr>
+                       
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+ 
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-footer">
+            Panel footer
+        </div>
+    </div>
+   <script src="/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="/js/plugins/morris/raphael.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/af-2.1.2/b-1.2.2/b-colvis-1.2.2/b-html5-1.2.2/fc-3.2.2/fh-3.1.2/kt-2.1.3/r-2.1.0/datatables.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript">
+
+    $(function() {
+     var table = $('#example').DataTable({
+        "ajax": {
+            url: "/api/users",
+            dataSrc: ''
+        },
+
+        "columns": [{
+            "data": "username"
+        }, {
+            "data": "firstName"
+        }, {
+            "data": "lastName"
+        }, {
+            "data": "email"
+        }]
+
+    
+
+    });
+console.log(table);
+$("tbody").on('click', "td",function (){
+      // console.log($(this).text());
+    window.location.href = "/" + $(this).text 
+// how do you do a get request to a route
+     });
+
+});
+
+    </script>
+    <!-- Bootstrap JavaScript -->
+    
+
+</body>
+
+</html>

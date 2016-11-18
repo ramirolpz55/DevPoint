@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
+    <title> Dev Point | Login </title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Log in to your Dev Point account from this secure Dev Point login page." name="description" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-bg">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="align-content: center">
+                        
+                        <div class="logo">
+                            <a href="/signup">
+                                <img src="img/logo.gif" style="width:250px;">
+                            </a>
+                        </div>
+
+                        <h3 class="profile-title">Welcome to Dev Point</h3>
+                        <h3 class="profile-title2">Log in to your account</h3>
+                        <br>
+
+                        <form action="/login" method="post" role="form" name="login-form">
+                            <input name="_csrf" type="hidden" value="" />
+
+                            <div class="form-group">
+                                <label for="username">Username </label>
+                                <div class="input-icon icon-username">
+                                </div>
+                                <input autofocus="true" class="form-control" id="username" name="username" placeholder="Username" tabindex="1" type="text" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-icon icon-password"></div>
+                                <input autocomplete="off" class="form-control password" id="password" name="password" placeholder="Password" tabindex="2" type="password" required >
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2" id="message-alert" style="text-align: center">
+                                 <span id="message"><br></span>
+                            </div>
+                            <!-- <a href="reset-password" class="rp" style="margin-left: 15px">Reset Password</a> -->
+                        
+
+                            <button class="btn btn-primary btn-lg btn-block" name="commit" tabindex="3" type="submit" value="Log In">Log In</button>
+                        </form>
+                        
+                        <div class="divider">
+                            <hr class="left" />
+                                <span>or</span>
+                            <hr class="right" />
+                        </div>
+                        <br>
+
+                        <label for="title" class="title_dont">Dont have an Account?</label>
+                        <br>
+                        <br>
+                        <form action="/signup">
+                            <button class="btn btn-primary btn-lg btn-block" name="signup" tabindex="3 " type="submit " value="Sign Up">Sign Up</button>
+                        </form> 
+
+                    </div>
+                </div>
+            </div>
+    <script>
+    $(function() {
+        $('form[name=login-form]').submit(function() {
+            $.post($(this).attr('action'), $(this).serialize(), function(res) {
+                console.log(res.response);
+                if (res.response) {
+                    window.location.href = "/mydashboard";
+                }
+                $("#message").text(res.message);
+                // setTimeout(window.location.reload.bind(window.location), 1500);
+            });
+            // alert("User Name already Taken");
+            return false; // prevent default action
+        });
+    });
+    </script>
+
+
+
+</body>
+
+</html>

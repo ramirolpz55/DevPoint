@@ -1,0 +1,25 @@
+<div class="row">
+    <h4 class="pre">About Me</h4>
+    <div class="col-xs-12">
+        <h2>{{user.headline}}</h2>
+        <p>{{user.description}}</p>
+    </div>
+</div>
+<div class="row section-block services-block">
+    <h4 class="pre">Services that I provide</h4>
+    {{#each services}}
+        <div class="col-md-4">
+            <div class="service">
+                <h4 id="title">{{this.title}}</h4>
+                <p id="service_desc">{{this.description}}</p>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+{{#section 'script'}}
+<script type="text/javascript">
+
+</script>
+{{/section}}
+

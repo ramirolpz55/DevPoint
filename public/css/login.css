@@ -1,0 +1,73 @@
+.panel {
+	/*width:30%;
+    min-width:100px;
+    min-height:100px;
+    position: absolute;
+    left:35%;*/
+    /*top:100px;*/
+    padding: 40px;
+
+}
+.container-bg {
+	margin-top: 100px;
+}
+.panel {
+	border-radius: 20px;
+	font-family: avenir;
+}
+.login-footer {
+	font-family: avenir;
+	text-align: center;
+}
+.profile-title {
+	font-family: avenir;
+	color: blue;
+	/*margin-left: 35px;*/
+	font-size: 25px;
+	text-align: center;
+}
+.profile-title2 {
+	font-family: avenir;
+	text-align: center;
+	font-weight: lighter;
+	/*margin-left: 35px;*/
+}
+body {
+	background: url("/img/bg7.jpeg") no-repeat center center fixed ;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+}
+.divider {
+    width:100%;
+    text-align:center;
+}
+.divider hr {
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+}
+
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+span {
+	line-height: 3;
+}
+.title_dont {
+	text-align: center;
+}
+#message {
+	font-weight: bold;
+	font-family: avenir;
+	color: red;
+	font-size: 15px;
+}
+.logo {
+	text-align: center;
+
+}
