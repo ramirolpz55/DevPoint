@@ -5,9 +5,9 @@
 	- Employers can choose to search engineers and observe projects/bios of each unique user.
 	- Create a profile! It's easy as 1,2,3!
 
-## Live Website 
+### Live Website 
 
-	DEVPOINT[https://devpointtech.herokuapp.com/]
+	DEVPOINT [https://devpointtech.herokuapp.com/]
 
 ## Register
 
