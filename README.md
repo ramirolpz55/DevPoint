@@ -18,28 +18,28 @@
 ## Dashboard
 
 	3. Sidenav and body all have function to access each area of the dashboard.
-		 **About Me**
+		 About Me
 			 - User will be able to update their personal information, Github, LinkedIN, email, Facebook, and Stackoverflow account.  They can also include a bio of their achievements or goals. 
 			 - A picture can be uploaded as a profile picture thus giving face to the user for recognization.
-		**Portfolio** 
+		Portfolio 
 			 - User is able to add projects from their own personal portfolio so that they can showcase them on their DevPoint profile.
-	   	 **Inbox**
+	   	 Inbox
 			 - User is able to recieve messages sent by employers or friends with job offers or even a simple hello.
 
 ## Client Side Template
 	4. All updated information from the User's dashboard will be displayed onto the client side template.
 		- All click-able icons will display a direct route to the user's Github, LinkdIN, Facebook, and other websites.
 		- Top-right nav bar contains tabs to access the AboutMe, Portfolio, and Contact pages on the client-side views.
-			**About Me**
+			About Me
 				- Contains the biography of the user and picture in accordance to the template selected.
-			**Portfolio**
+			Portfolio
 				- Contains each project uploaded by the user.	
 				- Modals will display when each project is clicked and will show a general summary of the project. Also links to view/test the project live.
-			**Contact**
+			Contact
 				- Employers will be able to contact user through this tab and request for further information or provide a job proposal.
 
 ## Database
-    5. All information is stored in a backend database using MYSQL to consturct the DB please utltize the `scheme.sql` and `seeds.sql` along with sequelize.
+    5. All information is stored in a backend database using MYSQL to consturct the DB please utltize the scheme.sql and seeds.sql along with sequelize.
 
 ## Future
     6. Future aspirations for the project: 
